@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://80nkyw5ktokm"]
+
+[ext_resource type="AudioStream" uid="uid://bqye886o4wgtg" path="res://Sounds/white_noise.wav" id="1_3640m"]
+[ext_resource type="Script" path="res://Scripts/SoundSourceMover.gd" id="2_hmjtl"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.826138, 0.563468, 0, -0.563468, 0.826138, -2, 3, 0)
+light_indirect_energy = 2.0
+directional_shadow_mode = 0
+
+[node name="User" type="Node3D" parent="."]
+
+[node name="AudioListener3D" type="AudioListener3D" parent="User"]
+current = true
+
+[node name="Camera3D" type="Camera3D" parent="User"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="User"]
+
+[node name="SoundSource" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.02251)
+script = ExtResource("2_hmjtl")
+distance = null
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SoundSource"]
+stream = ExtResource("1_3640m")
+autoplay = true
+panning_strength = 3.0
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="SoundSource"]
