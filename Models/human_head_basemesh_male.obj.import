@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ju55fnhhhlye"
+path="res://.godot/imported/human_head_basemesh_male.obj-7c01201b2beab2bb346e8d0222e8399a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/human_head_basemesh_male.obj-7c01201b2beab2bb346e8d0222e8399a.mesh"]
+
+source_file="res://Models/human_head_basemesh_male.obj"
+dest_files=["res://.godot/imported/human_head_basemesh_male.obj-7c01201b2beab2bb346e8d0222e8399a.mesh", "res://.godot/imported/human_head_basemesh_male.obj-7c01201b2beab2bb346e8d0222e8399a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

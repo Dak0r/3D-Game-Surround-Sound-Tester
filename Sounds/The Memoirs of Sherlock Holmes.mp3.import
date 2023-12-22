@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5ytswvhacwjl"
+path="res://.godot/imported/The Memoirs of Sherlock Holmes.mp3-0a8603fa8cb20c2f0f9e9f5d317f5e95.mp3str"
+
+[deps]
+
+source_file="res://Sounds/The Memoirs of Sherlock Holmes.mp3"
+dest_files=["res://.godot/imported/The Memoirs of Sherlock Holmes.mp3-0a8603fa8cb20c2f0f9e9f5d317f5e95.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://80nkyw5ktokm"]
+[gd_scene load_steps=6 format=3 uid="uid://80nkyw5ktokm"]
 
 [ext_resource type="AudioStream" uid="uid://bqye886o4wgtg" path="res://Sounds/white_noise.wav" id="1_3640m"]
 [ext_resource type="Script" path="res://Scripts/SoundUi.gd" id="1_h0mt5"]
-[ext_resource type="ArrayMesh" uid="uid://cdoqn3jay1yw7" path="res://Models/human_head_only.obj" id="2_hk1cv"]
+[ext_resource type="ArrayMesh" uid="uid://ju55fnhhhlye" path="res://Models/human_head_basemesh_male.obj" id="1_jrp2v"]
 [ext_resource type="Script" path="res://Scripts/SoundSourceMover.gd" id="2_hmjtl"]
 [ext_resource type="AudioStream" uid="uid://01gtamew4c0a" path="res://Sounds/1000hz_sine.wav" id="3_2bqxg"]
-[ext_resource type="AudioStream" uid="uid://b5ytswvhacwjl" path="res://Sounds/The Memoirs of Sherlock Holmes.mp3" id="4_xdtjy"]
-[ext_resource type="AudioStream" uid="uid://s4cp0jg7jdcl" path="res://Sounds/battle-music_by_Alexandr Zhelanov.mp3" id="6_slbcu"]
-[ext_resource type="Material" uid="uid://dx7putgdabdmv" path="res://Materials/new_standard_material_3d.tres" id="8_ikv85"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -17,19 +14,12 @@ light_indirect_energy = 2.0
 directional_shadow_mode = 0
 
 [node name="User" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.86877, 0)
 
 [node name="AudioListener3D" type="AudioListener3D" parent="User"]
 current = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="User"]
-transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, -5.137, 0.15)
-mesh = ExtResource("2_hk1cv")
-
 [node name="Camera3D" type="Camera3D" parent="User"]
-transform = Transform3D(1, 1.67037e-22, 3.82137e-15, -3.82137e-15, 4.37114e-08, 1, 0, -1, 4.37114e-08, 0, 2, 0)
-projection = 1
-size = 3.0
+transform = Transform3D(-0.142197, -0.701715, 0.698123, 6.0291e-09, 0.70529, 0.708919, -0.989838, 0.100806, -0.10029, 3.83878, 3.27523, -0.915057)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="User/Camera3D"]
 
@@ -81,15 +71,14 @@ offset_left = 87.0
 offset_top = 135.0
 offset_right = 424.0
 offset_bottom = 151.0
-max_value = 1.0
-step = 0.1
+max_value = 3.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="User/Camera3D/CanvasLayer/Node2D/PanningSlider"]
 offset_left = -79.0
 offset_top = -4.0
 offset_right = -5.0
 offset_bottom = 20.0
-text = "Spread:"
+text = "Panning:"
 scroll_active = false
 
 [node name="PanningValue" type="RichTextLabel" parent="User/Camera3D/CanvasLayer/Node2D/PanningSlider"]
@@ -100,18 +89,22 @@ offset_bottom = 20.0
 text = "1"
 scroll_active = false
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="User"]
+transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, -5.13691, 0)
+mesh = ExtResource("1_jrp2v")
+
 [node name="SoundSource" type="Node3D" parent="." node_paths=PackedStringArray("audioPlayer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -1.02251)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.02251)
 script = ExtResource("2_hmjtl")
-distance = 1
+distance = 3
 audioPlayer = NodePath("AudioStreamPlayer3D")
-audioClips = Array[AudioStream]([ExtResource("4_xdtjy"), ExtResource("6_slbcu"), ExtResource("1_3640m"), ExtResource("3_2bqxg")])
+audioNoise = ExtResource("1_3640m")
+audioSine = ExtResource("3_2bqxg")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SoundSource"]
+stream = ExtResource("1_3640m")
 attenuation_model = 3
-volume_db = -10.0
+volume_db = -4.706
 panning_strength = 3.0
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="SoundSource"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-material_override = ExtResource("8_ikv85")

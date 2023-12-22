@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://s4cp0jg7jdcl"
+path="res://.godot/imported/battle-music_by_Alexandr Zhelanov.mp3-9ad549806fb16c9394dcc8cac7ac25cb.mp3str"
+
+[deps]
+
+source_file="res://Sounds/battle-music_by_Alexandr Zhelanov.mp3"
+dest_files=["res://.godot/imported/battle-music_by_Alexandr Zhelanov.mp3-9ad549806fb16c9394dcc8cac7ac25cb.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
