@@ -6,15 +6,17 @@ It plays looping sounds at a steady volume while moving them around the listener
 position.
 The audio source can also be controlled via keyboard or a game pad.
 
-![Screenshot of the surround sound tester app](/screenshot.png?raw=true)
-
 Created with Godot 4
 
+![Screenshot of the surround sound tester app](/screenshot.png?raw=true)
+
+
 ## Adjusting settings
-1. Open Sound Settings (in Windows 11 choose "More Sound Settings").
-2. Choose your audio device in the Playback Tab
-3. Click Properties, Open the "Levels" Tab and click on `Balance`
-4. Run this tool and adjust the Levels for the individual channels until the
+1. Open the Windows `Sound Settings` (in Windows 11 choose "More Sound Settings"
+   at the bottom).
+3. Choose your audio device in the `Playback` Tab
+4. Click on `Properties`, then open the `Levels` tab and click on `Balance`
+5. Run this tool and adjust the Levels for the individual channels until the
 volume is identical from any direction.
 
 ##  Why?
