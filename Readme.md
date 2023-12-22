@@ -1,4 +1,4 @@
-# 3D Surround Sound Tester
+# 3D Game Surround Sound Tester
 
 This tool allows you to test how your Surround Sound Setup sounds in games and
 verify all speakers are set up correctly.
