@@ -1,9 +1,14 @@
 # 3D Surround Sound Tester
 
-This tool allows you to test your Windows Surround Sound Settings in  games.
+This tool allows you to test how your Surround Sound Setup sounds in games and
+verify all speakers are set up correctly.
 It plays looping sounds at a steady volume while moving them around the listeners
 position.
 The audio source can also be controlled via keyboard or a game pad.
+
+![Screenshot of the surround sound tester app](/screenshot.png?raw=true)
+
+Created with Godot 4
 
 ## Adjusting settings
 1. Open Sound Settings (in Windows 11 choose "More Sound Settings").
