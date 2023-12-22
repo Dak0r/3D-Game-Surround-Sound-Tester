@@ -27,7 +27,7 @@ transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, -5.
 mesh = ExtResource("2_hk1cv")
 
 [node name="Camera3D" type="Camera3D" parent="User"]
-transform = Transform3D(1, 1.67037e-22, 3.82137e-15, -3.82137e-15, 4.37114e-08, 1, 0, -1, 4.37114e-08, 0, 2, 0)
+transform = Transform3D(1, 1.67037e-22, 3.82137e-15, -3.82137e-15, 4.37114e-08, 1, 0, -1, 4.37114e-08, 0, 5, 0)
 projection = 1
 size = 3.0
 
@@ -45,8 +45,9 @@ planningValue = NodePath("PanningSlider/PanningValue")
 [node name="RichTextLabel" type="RichTextLabel" parent="User/Camera3D/CanvasLayer/Node2D"]
 offset_right = 467.0
 offset_bottom = 117.0
-text = "Control Sound Position: Left Stick / WSAD
-Change Sound: A / Space
+text = "Change sound position: A / Space
+Manual sound position: (Hold) Left Stick / W, S, A, D
+Change sound: X / Enter
 Change Volume: LB and RB / + and - "
 scroll_active = false
 

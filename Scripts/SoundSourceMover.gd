@@ -7,6 +7,7 @@ extends Node
 @export var audioClips: Array[AudioStream]
 
 var audioIndex = 0;
+var autoPositionIndex = 0;
 var circlePosition: float = 0;
 
 # Called when the node enters the scene tree for the first time.
@@ -18,20 +19,40 @@ func _process(delta):
 	var userControls = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	
 	if(userControls.length() > 0):
+		circlePosition = 0
 		self.position.x = userControls.x * distance
 		self.position.z = userControls.y * distance;
 	else:
-		circlePosition += circleSpeed * delta;
-		var circlePositionRad = deg_to_rad(circlePosition);
-		self.position.x = distance * cos(circlePositionRad)
-		self.position.z = distance * sin(circlePositionRad)
+		if(autoPositionIndex == 0):
+			circleListener(delta)
+		else:
+			circlePosition = 0
+			# Start with Left Front, then go CCW in 45 degree steps
+			var fixedDegree = 45 - (45*(autoPositionIndex-1))
+			self.position = degreeToPositionOnCircle(-fixedDegree)
 		
 	print(self.position)
+	
+func circleListener(delta):
+	circlePosition += circleSpeed * delta;
+	self.position = degreeToPositionOnCircle(circlePosition)
+
+	
+func degreeToPositionOnCircle(degree):
+	var degreeInRad = deg_to_rad(degree-90); #-90 to make 0 = front center
+	var pos: Vector3
+	pos.x = distance * cos(degreeInRad)
+	pos.z = distance * sin(degreeInRad)
+	return pos;
+	
 		
 func _input(event):
 	if (event is InputEventKey):
-		
-		if(event.is_action_pressed("confirm")):
+		if(event.is_action_pressed("change_position")):
+			autoPositionIndex = autoPositionIndex + 1
+			autoPositionIndex %= (360/45) + 1
+			
+		if(event.is_action_pressed("change_sound")):
 			audioIndex = audioIndex + 1
 			audioIndex %= audioClips.size()
 			playAudio()
